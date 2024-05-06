@@ -1,4 +1,7 @@
 <template>
+  <Head title="My App">
+    <meta type="description" content="information about my app" head-key="description">
+  </Head>
   <section class="p-6 bg-gray-200">
     <header class="flex justify-between">
       <div class="flex items-center">
@@ -12,7 +15,6 @@
 </section>
   <section class="p-6 ">
     <div class="max-w-3xl mx-auto">
-      <iframe width="400" height="200" src="https://www.youtube.com/embed/7-VEPjqchak?list=RDGMEMP-96bLtob-xyvCobnxVfywVM7-VEPjqchak" title="The Weeknd, Playboi Carti &amp; Madonna - Popular (Lyrics)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <slot/>
     </div>
   </section>
@@ -20,9 +22,10 @@
 
 <script>
 import Nav from './Nav'
+import { Head } from '@inertiajs/vue3';
 
 export default {
-  components: { Nav },
+  components: { Nav,Head },
   computed: {
     username() {
       return this.$page.props.auth.user.username;
