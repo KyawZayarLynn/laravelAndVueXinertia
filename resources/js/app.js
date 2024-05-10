@@ -5,9 +5,7 @@ import Layout from './Shared/Layout'
 createInertiaApp({
   resolve: name => {
     let page = require(`./Pages/${name}.vue`).default;
-
     page.layout ??= Layout;
-
     return page;
   }
   ,
